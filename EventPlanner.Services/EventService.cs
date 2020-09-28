@@ -61,5 +61,48 @@ namespace EventPlanner.Services
                 return query.ToArray();
             }
         }
+
+        // Event Details
+        public EventDetail GetEventById(int id)
+        {
+            using (ApplicationDbContext ctx = new ApplicationDbContext())
+            {
+                Event entity =
+                    ctx
+                        .Events
+                        .Single(e => e.EventID == id && e.OwnerId == _userId);
+                return
+                    new EventDetail
+                    {
+                        EventID = entity.EventID,
+                        Title = entity.Title,
+                        Description = entity.Description,
+                        StartTime = entity.StartTime,
+                        EndTime = entity.EndTime,
+                        IsAllDay = entity.IsAllDay
+                       
+                    };
+            }
+        }
+
+        //Event Edit
+        public bool UpdateEvent(EventEdit model)
+        {
+            using (ApplicationDbContext ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Events
+                        .Single(e => e.EventID == model.EventID && e.OwnerId == _userId);
+
+                entity.Title = model.Title;
+                entity.Description = model.Description;
+                entity.StartTime = model.StartTime;
+                entity.EndTime = model.EndTime;
+                entity.IsAllDay = model.IsAllDay;
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
     }
 }
