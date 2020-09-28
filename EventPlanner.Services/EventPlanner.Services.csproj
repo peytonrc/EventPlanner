@@ -54,11 +54,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EventService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\EventPlanner.Data\EventPlanner.Data.csproj">
+      <Project>{6e86a074-8f29-4f46-8d70-32c5e701ed52}</Project>
+      <Name>EventPlanner.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EventPlanner.Models\EventPlanner.Models.csproj">
+      <Project>{14fdb89f-de07-444f-85cd-be47dc6862b9}</Project>
+      <Name>EventPlanner.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

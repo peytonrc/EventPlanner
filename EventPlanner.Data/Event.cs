@@ -11,6 +11,7 @@ namespace EventPlanner.Data
     {
         [Key]
         public int EventID { get; set; }
+        public Guid OwnerId { get; set; }
 
         //[ForeignKey("Subject")] // Foreign Key
         //[Display(Name = "Subject ID")]
