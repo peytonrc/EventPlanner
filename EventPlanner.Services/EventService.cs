@@ -85,7 +85,7 @@ namespace EventPlanner.Services
             }
         }
 
-        //Event Edit
+        // Edit Event
         public bool UpdateEvent(EventEdit model)
         {
             using (ApplicationDbContext ctx = new ApplicationDbContext())
@@ -100,6 +100,22 @@ namespace EventPlanner.Services
                 entity.StartTime = model.StartTime;
                 entity.EndTime = model.EndTime;
                 entity.IsAllDay = model.IsAllDay;
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
+
+        // Delete Event
+        public bool DeleteEvent(int eventId)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Events
+                        .Single(e => e.EventID == eventId && e.OwnerId == _userId);
+
+                ctx.Events.Remove(entity);
 
                 return ctx.SaveChanges() == 1;
             }

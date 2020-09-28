@@ -98,6 +98,32 @@ namespace EventPlanner.WebMVC.Controllers
             return View(model);
         }
 
+        // GET: Event/Delete
+        [ActionName("Delete")]
+        public ActionResult Delete(int id)
+        {
+            var svc = CreateEventService();
+            var model = svc.GetEventById(id);
+
+            return View(model);
+        }
+
+        // POST: Event/Delete
+        [HttpPost]
+        [ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeletePost(int id)
+        {
+            var service = CreateEventService();
+
+            service.DeleteEvent(id);
+
+            TempData["SaveResult"] = "Your event has been deleted";
+
+            return RedirectToAction("Index");
+        }
+
+
 
 
 
