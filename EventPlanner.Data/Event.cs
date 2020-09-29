@@ -34,10 +34,10 @@ namespace EventPlanner.Data
         [Required]
         public bool IsAllDay { get; set; }
 
-        //[ForeignKey("Destination")] // Foreign Key
-        //[Display(Name = "Destination ID")]
-        //public int DestinationID { get; set; }
-        //public virtual Destination Destination { get; set; }
+        [ForeignKey("Location")] // Foreign Key
+        [Display(Name = "Location ID")]
+        public int LocationID { get; set; }
+        public virtual Location Location { get; set; }
 
     }
 }

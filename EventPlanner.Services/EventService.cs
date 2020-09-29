@@ -29,7 +29,8 @@ namespace EventPlanner.Services
                     Description = model.Description,
                     StartTime = model.StartTime,
                     EndTime = model.EndTime,
-                    IsAllDay = model.IsAllDay
+                    IsAllDay = model.IsAllDay,
+                    LocationID = model.LocationID
                     
                 };
 
@@ -81,7 +82,8 @@ namespace EventPlanner.Services
                         Description = entity.Description,
                         StartTime = entity.StartTime,
                         EndTime = entity.EndTime,
-                        IsAllDay = entity.IsAllDay
+                        IsAllDay = entity.IsAllDay,
+                        LocationID= entity.LocationID
                        
                     };
             }
@@ -103,6 +105,7 @@ namespace EventPlanner.Services
                 entity.StartTime = model.StartTime;
                 entity.EndTime = model.EndTime;
                 entity.IsAllDay = model.IsAllDay;
+                entity.LocationID = model.LocationID;
 
                 return ctx.SaveChanges() == 1;
             }

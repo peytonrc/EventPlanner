@@ -17,6 +17,5 @@ namespace EventPlanner.Models
 
         [Display(Name ="All Day")]
         public bool IsAllDay { get; set; }
-
     }
 }

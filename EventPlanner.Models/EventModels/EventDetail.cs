@@ -31,5 +31,11 @@ namespace EventPlanner.Models
 
         [Display(Name = "All Day")]
         public bool IsAllDay { get; set; }
+
+        [ForeignKey("Location")] // Foreign Key
+        [Display(Name = "Location ID")]
+        public int LocationID { get; set; }
+        public virtual Location Location { get; set; }
+
     }
 }

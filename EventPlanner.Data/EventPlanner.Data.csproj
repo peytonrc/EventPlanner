@@ -57,13 +57,9 @@
     <Compile Include="Event.cs" />
     <Compile Include="IdentityModels.cs" />
     <Compile Include="Location.cs" />
-    <Compile Include="Migrations\202009282027493_InitalMigration.cs" />
-    <Compile Include="Migrations\202009282027493_InitalMigration.Designer.cs">
-      <DependentUpon>202009282027493_InitalMigration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202009291602275_LocationModel.cs" />
-    <Compile Include="Migrations\202009291602275_LocationModel.Designer.cs">
-      <DependentUpon>202009291602275_LocationModel.cs</DependentUpon>
+    <Compile Include="Migrations\202009291751152_EventUpdated.cs" />
+    <Compile Include="Migrations\202009291751152_EventUpdated.Designer.cs">
+      <DependentUpon>202009291751152_EventUpdated.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -74,11 +70,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202009282027493_InitalMigration.resx">
-      <DependentUpon>202009282027493_InitalMigration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202009291602275_LocationModel.resx">
-      <DependentUpon>202009291602275_LocationModel.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202009291751152_EventUpdated.resx">
+      <DependentUpon>202009291751152_EventUpdated.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

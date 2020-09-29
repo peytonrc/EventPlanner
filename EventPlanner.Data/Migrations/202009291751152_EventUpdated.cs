@@ -3,7 +3,7 @@ namespace EventPlanner.Data.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class InitalMigration : DbMigration
+    public partial class EventUpdated : DbMigration
     {
         public override void Up()
         {
@@ -19,10 +19,26 @@ namespace EventPlanner.Data.Migrations
                         StartTime = c.DateTime(nullable: false),
                         EndTime = c.DateTime(nullable: false),
                         IsAllDay = c.Boolean(nullable: false),
+                        LocationID = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.EventID)
+                .ForeignKey("dbo.Location", t => t.LocationID, cascadeDelete: true)
                 .ForeignKey("dbo.Subject", t => t.SubjectID, cascadeDelete: true)
-                .Index(t => t.SubjectID);
+                .Index(t => t.SubjectID)
+                .Index(t => t.LocationID);
+            
+            CreateTable(
+                "dbo.Location",
+                c => new
+                    {
+                        LocationID = c.Int(nullable: false, identity: true),
+                        OwnerId = c.Guid(nullable: false),
+                        LocationName = c.String(nullable: false),
+                        Address = c.String(nullable: false),
+                        IsInside = c.Boolean(nullable: false),
+                        TravelTime = c.String(nullable: false),
+                    })
+                .PrimaryKey(t => t.LocationID);
             
             CreateTable(
                 "dbo.Subject",
@@ -114,10 +130,12 @@ namespace EventPlanner.Data.Migrations
             DropForeignKey("dbo.IdentityUserClaim", "ApplicationUser_Id", "dbo.ApplicationUser");
             DropForeignKey("dbo.IdentityUserRole", "IdentityRole_Id", "dbo.IdentityRole");
             DropForeignKey("dbo.Event", "SubjectID", "dbo.Subject");
+            DropForeignKey("dbo.Event", "LocationID", "dbo.Location");
             DropIndex("dbo.IdentityUserLogin", new[] { "ApplicationUser_Id" });
             DropIndex("dbo.IdentityUserClaim", new[] { "ApplicationUser_Id" });
             DropIndex("dbo.IdentityUserRole", new[] { "ApplicationUser_Id" });
             DropIndex("dbo.IdentityUserRole", new[] { "IdentityRole_Id" });
+            DropIndex("dbo.Event", new[] { "LocationID" });
             DropIndex("dbo.Event", new[] { "SubjectID" });
             DropTable("dbo.IdentityUserLogin");
             DropTable("dbo.IdentityUserClaim");
@@ -125,6 +143,7 @@ namespace EventPlanner.Data.Migrations
             DropTable("dbo.IdentityUserRole");
             DropTable("dbo.IdentityRole");
             DropTable("dbo.Subject");
+            DropTable("dbo.Location");
             DropTable("dbo.Event");
         }
     }

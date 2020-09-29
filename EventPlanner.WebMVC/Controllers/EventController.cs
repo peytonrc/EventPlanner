@@ -64,6 +64,7 @@ namespace EventPlanner.WebMVC.Controllers
                 new EventEdit
                 {
                     EventID = detail.EventID,
+                    SubjectID = detail.SubjectID,
                     Title = detail.Title,
                     Description = detail.Description,
                     StartTime = detail.StartTime,
