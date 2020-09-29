@@ -123,11 +123,6 @@ namespace EventPlanner.WebMVC.Controllers
             return RedirectToAction("Index");
         }
 
-
-
-
-
-
         // Helper Method
         private EventService CreateEventService()
         {

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,10 +14,10 @@ namespace EventPlanner.Data
         public int EventID { get; set; }
         public Guid OwnerId { get; set; }
 
-        //[ForeignKey("Subject")] // Foreign Key
-        //[Display(Name = "Subject ID")]
-        //public int SubjectID { get; set; }
-        //public virtual Subject Subject { get; set; }
+        [ForeignKey("Subject")] // Foreign Key
+        [Display(Name = "Subject ID")]
+        public int SubjectID { get; set; }
+        public virtual Subject Subject { get; set; }
 
         [Required]
         public string Title { get; set; }

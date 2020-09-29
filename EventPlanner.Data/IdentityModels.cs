@@ -33,6 +33,9 @@ namespace EventPlanner.Data
         }
 
         public DbSet<Event> Events { get; set; }
+        public DbSet<Subject> Subjects { get; set; }
+
+        public DbSet<Location> Locations { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

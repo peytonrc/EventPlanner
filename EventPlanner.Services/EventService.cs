@@ -24,6 +24,7 @@ namespace EventPlanner.Services
                 new Event()
                 {
                     OwnerId = _userId,
+                    SubjectID = model.SubjectID,
                     Title = model.Title,
                     Description = model.Description,
                     StartTime = model.StartTime,
@@ -75,6 +76,7 @@ namespace EventPlanner.Services
                     new EventDetail
                     {
                         EventID = entity.EventID,
+                        SubjectID = entity.SubjectID,
                         Title = entity.Title,
                         Description = entity.Description,
                         StartTime = entity.StartTime,
@@ -95,6 +97,7 @@ namespace EventPlanner.Services
                         .Events
                         .Single(e => e.EventID == model.EventID && e.OwnerId == _userId);
 
+                entity.SubjectID = model.SubjectID;
                 entity.Title = model.Title;
                 entity.Description = model.Description;
                 entity.StartTime = model.StartTime;

@@ -3,7 +3,7 @@ namespace EventPlanner.Data.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class InitialCreate : DbMigration
+    public partial class InitalMigration : DbMigration
     {
         public override void Up()
         {
@@ -12,13 +12,28 @@ namespace EventPlanner.Data.Migrations
                 c => new
                     {
                         EventID = c.Int(nullable: false, identity: true),
+                        OwnerId = c.Guid(nullable: false),
+                        SubjectID = c.Int(nullable: false),
                         Title = c.String(nullable: false),
                         Description = c.String(nullable: false),
                         StartTime = c.DateTime(nullable: false),
                         EndTime = c.DateTime(nullable: false),
                         IsAllDay = c.Boolean(nullable: false),
                     })
-                .PrimaryKey(t => t.EventID);
+                .PrimaryKey(t => t.EventID)
+                .ForeignKey("dbo.Subject", t => t.SubjectID, cascadeDelete: true)
+                .Index(t => t.SubjectID);
+            
+            CreateTable(
+                "dbo.Subject",
+                c => new
+                    {
+                        SubjectID = c.Int(nullable: false, identity: true),
+                        OwnerId = c.Guid(nullable: false),
+                        TypeOfActivity = c.Int(nullable: false),
+                        SubjectName = c.String(nullable: false),
+                    })
+                .PrimaryKey(t => t.SubjectID);
             
             CreateTable(
                 "dbo.IdentityRole",
@@ -98,15 +113,18 @@ namespace EventPlanner.Data.Migrations
             DropForeignKey("dbo.IdentityUserLogin", "ApplicationUser_Id", "dbo.ApplicationUser");
             DropForeignKey("dbo.IdentityUserClaim", "ApplicationUser_Id", "dbo.ApplicationUser");
             DropForeignKey("dbo.IdentityUserRole", "IdentityRole_Id", "dbo.IdentityRole");
+            DropForeignKey("dbo.Event", "SubjectID", "dbo.Subject");
             DropIndex("dbo.IdentityUserLogin", new[] { "ApplicationUser_Id" });
             DropIndex("dbo.IdentityUserClaim", new[] { "ApplicationUser_Id" });
             DropIndex("dbo.IdentityUserRole", new[] { "ApplicationUser_Id" });
             DropIndex("dbo.IdentityUserRole", new[] { "IdentityRole_Id" });
+            DropIndex("dbo.Event", new[] { "SubjectID" });
             DropTable("dbo.IdentityUserLogin");
             DropTable("dbo.IdentityUserClaim");
             DropTable("dbo.ApplicationUser");
             DropTable("dbo.IdentityUserRole");
             DropTable("dbo.IdentityRole");
+            DropTable("dbo.Subject");
             DropTable("dbo.Event");
         }
     }

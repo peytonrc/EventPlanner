@@ -10,7 +10,6 @@ namespace EventPlanner.Data.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
-            ContextKey = "EventPlanner.Data.ApplicationDbContext";
         }
 
         protected override void Seed(EventPlanner.Data.ApplicationDbContext context)
