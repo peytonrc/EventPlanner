@@ -3,7 +3,7 @@ namespace EventPlanner.Data.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class EventUpdated : DbMigration
+    public partial class EventAdded : DbMigration
     {
         public override void Up()
         {
@@ -16,8 +16,8 @@ namespace EventPlanner.Data.Migrations
                         SubjectID = c.Int(nullable: false),
                         Title = c.String(nullable: false),
                         Description = c.String(nullable: false),
-                        StartTime = c.DateTime(nullable: false),
-                        EndTime = c.DateTime(nullable: false),
+                        Date = c.DateTime(nullable: false),
+                        Time = c.String(nullable: false),
                         IsAllDay = c.Boolean(nullable: false),
                         LocationID = c.Int(nullable: false),
                     })

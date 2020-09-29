@@ -7,13 +7,13 @@ namespace EventPlanner.Data.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.0-30225")]
-    public sealed partial class EventUpdated : IMigrationMetadata
+    public sealed partial class EventAdded : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(EventUpdated));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(EventAdded));
         
         string IMigrationMetadata.Id
         {
-            get { return "202009291751152_EventUpdated"; }
+            get { return "202009292028225_EventAdded"; }
         }
         
         string IMigrationMetadata.Source

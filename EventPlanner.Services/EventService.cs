@@ -27,8 +27,8 @@ namespace EventPlanner.Services
                     SubjectID = model.SubjectID,
                     Title = model.Title,
                     Description = model.Description,
-                    StartTime = model.StartTime,
-                    EndTime = model.EndTime,
+                    Date = model.Date,
+                    Time = model.Time,
                     IsAllDay = model.IsAllDay,
                     LocationID = model.LocationID
                     
@@ -80,8 +80,8 @@ namespace EventPlanner.Services
                         SubjectID = entity.SubjectID,
                         Title = entity.Title,
                         Description = entity.Description,
-                        StartTime = entity.StartTime,
-                        EndTime = entity.EndTime,
+                        Date = entity.Date,
+                        Time = entity.Time,
                         IsAllDay = entity.IsAllDay,
                         LocationID= entity.LocationID
                        
@@ -102,8 +102,8 @@ namespace EventPlanner.Services
                 entity.SubjectID = model.SubjectID;
                 entity.Title = model.Title;
                 entity.Description = model.Description;
-                entity.StartTime = model.StartTime;
-                entity.EndTime = model.EndTime;
+                entity.Date = model.Date;
+                entity.Time = model.Time;
                 entity.IsAllDay = model.IsAllDay;
                 entity.LocationID = model.LocationID;
 

@@ -23,11 +23,10 @@ namespace EventPlanner.Models
 
         public string Description { get; set; }
 
-        [Display(Name = "Start Time")]
-        public DateTime StartTime { get; set; }
+        public DateTime Date { get; set; }
 
-        [Display(Name = "End Time")]
-        public DateTime EndTime { get; set; }
+        [DataType(DataType.Time)]
+        public string Time { get; set; }
 
         [Display(Name = "All Day")]
         public bool IsAllDay { get; set; }

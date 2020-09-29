@@ -26,10 +26,11 @@ namespace EventPlanner.Data
         public string Description { get; set; }
 
         [Required]
-        public DateTime StartTime { get; set; }
+        public DateTime Date { get; set; }
 
         [Required]
-        public DateTime EndTime { get; set; }
+        [DataType(DataType.Time)]
+        public string Time { get; set; }
 
         [Required]
         public bool IsAllDay { get; set; }

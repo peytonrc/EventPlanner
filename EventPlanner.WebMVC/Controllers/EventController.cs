@@ -67,8 +67,8 @@ namespace EventPlanner.WebMVC.Controllers
                     SubjectID = detail.SubjectID,
                     Title = detail.Title,
                     Description = detail.Description,
-                    StartTime = detail.StartTime,
-                    EndTime = detail.EndTime,
+                    Date = detail.Date,
+                    Time = detail.Time,
                     IsAllDay = detail.IsAllDay
                 };
             return View(model);
