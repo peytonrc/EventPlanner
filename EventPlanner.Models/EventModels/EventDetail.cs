@@ -20,14 +20,13 @@ namespace EventPlanner.Models
        
         public virtual Subject Subject { get; set; }
 
-        public string Title { get; set; }
-
         public string Description { get; set; }
 
+        [DataType(DataType.Date)]
         public DateTime Date { get; set; }
 
         [DataType(DataType.Time)]
-        public string Time { get; set; }
+        public TimeSpan Time { get; set; }
 
         [Display(Name = "All Day")]
         public bool IsAllDay { get; set; }

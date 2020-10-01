@@ -18,8 +18,8 @@ namespace EventPlanner.Data
         public Guid OwnerId { get; set; }
 
         [Required]
-        [Display(Name = "Type of Activity")]
-        public string TypeOfActivity { get; set; }
+        [Display(Name = "Type of Event")]
+        public string TypeOfEvent { get; set; }
 
         [Required]
         [Display(Name = "Subject Name")]

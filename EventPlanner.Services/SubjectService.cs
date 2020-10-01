@@ -25,7 +25,7 @@ namespace EventPlanner.Services
                 new Subject()
                 {
                     OwnerId = _userId,
-                    TypeOfActivity = model.TypeOfActivity,
+                    TypeOfEvent = model.TypeOfEvent,
                     SubjectName = model.SubjectName
                 };
 
@@ -50,7 +50,7 @@ namespace EventPlanner.Services
                                 new SubjectListItem
                                 {
                                     SubjectID = e.SubjectID,
-                                    TypeOfActivity = e.TypeOfActivity,
+                                    TypeOfEvent = e.TypeOfEvent,
                                     SubjectName = e.SubjectName
                                 }
                         );
@@ -72,7 +72,7 @@ namespace EventPlanner.Services
                     new SubjectDetail
                     {
                         SubjectID = entity.SubjectID,
-                        TypeOfActivity = entity.TypeOfActivity,
+                        TypeOfEvent = entity.TypeOfEvent,
                         SubjectName = entity.SubjectName
 
                     };
@@ -89,7 +89,7 @@ namespace EventPlanner.Services
                         .Subjects
                         .Single(e => e.SubjectID == model.SubjectID && e.OwnerId == _userId);
 
-                entity.TypeOfActivity = model.TypeOfActivity;
+                entity.TypeOfEvent = model.TypeOfEvent;
                 entity.SubjectName = model.SubjectName;
 
 

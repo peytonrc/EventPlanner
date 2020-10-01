@@ -20,17 +20,15 @@ namespace EventPlanner.Data
         public virtual Subject Subject { get; set; }
 
         [Required]
-        public string Title { get; set; }
-
-        [Required]
         public string Description { get; set; }
 
         [Required]
+        [DataType(DataType.Date)]
         public DateTime Date { get; set; }
 
         [Required]
         [DataType(DataType.Time)]
-        public string Time { get; set; }
+        public TimeSpan Time { get; set; }
 
         [Required]
         public bool IsAllDay { get; set; }

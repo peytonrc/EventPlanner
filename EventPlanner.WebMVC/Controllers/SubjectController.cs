@@ -64,7 +64,7 @@ namespace EventPlanner.WebMVC.Controllers
                 new SubjectEdit
                 {
                     SubjectID = detail.SubjectID,
-                    TypeOfActivity = detail.TypeOfActivity,
+                    TypeOfEvent = detail.TypeOfEvent,
                     SubjectName = detail.SubjectName
                 };
             return View(model);

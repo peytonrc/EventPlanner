@@ -27,7 +27,7 @@ namespace EventPlanner.WebMVC.Controllers
         // GET: Event/Create
         public ActionResult Create()
         {
-            var subjects = new SelectList(_db.Subjects.ToList(), "SubjectID", "TypeOfActivity");
+            var subjects = new SelectList(_db.Subjects.ToList(), "SubjectID", "SubjectName");
             ViewBag.Subjects = subjects;
             var locations = new SelectList(_db.Locations.ToList(), "LocationID", "LocationName");
             ViewBag.Locations = locations;
@@ -80,8 +80,6 @@ namespace EventPlanner.WebMVC.Controllers
                 new EventEdit
                 {
                     EventID = detail.EventID,
-                    SubjectID = detail.SubjectID,
-                    Title = detail.Title,
                     Description = detail.Description,
                     Date = detail.Date,
                     Time = detail.Time,

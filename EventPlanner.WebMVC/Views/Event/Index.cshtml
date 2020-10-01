@@ -25,7 +25,10 @@
                 @Html.DisplayNameFor(model => model.EventID)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Title)
+                @Html.DisplayNameFor(model => model.Subject.SubjectName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Subject.TypeOfEvent)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.IsAllDay)
@@ -35,22 +38,25 @@
 
         @foreach (var item in Model)
         {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.EventID)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Title)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.IsAllDay)
-                </td>
-                <td>
-                    @Html.ActionLink("Edit", "Edit", new { id = item.EventID }) |
-                    @Html.ActionLink("Details", "Details", new { id = item.EventID }) |
-                    @Html.ActionLink("Delete", "Delete", new { id = item.EventID })
-                </td>
-            </tr>
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.EventID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Subject.SubjectName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Subject.TypeOfEvent)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IsAllDay)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.EventID }) |
+            @Html.ActionLink("Details", "Details", new { id = item.EventID }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.EventID })
+        </td>
+    </tr>
         }
 
     </table>

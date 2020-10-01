@@ -25,7 +25,6 @@ namespace EventPlanner.Services
                 {
                     OwnerId = _userId,
                     SubjectID = model.SubjectID,
-                    Title = model.Title,
                     Description = model.Description,
                     Date = model.Date,
                     Time = model.Time,
@@ -55,7 +54,8 @@ namespace EventPlanner.Services
                                 new EventListItem
                                 {
                                     EventID = e.EventID,
-                                    Title = e.Title,
+                                    SubjectID = e.SubjectID,
+                                    Subject = e.Subject,
                                     IsAllDay = e.IsAllDay
                                 }
                         );
@@ -79,14 +79,12 @@ namespace EventPlanner.Services
                         EventID = entity.EventID,
                         SubjectID = entity.SubjectID,
                         Subject = entity.Subject,
-                        Title = entity.Title,
                         Description = entity.Description,
                         Date = entity.Date,
                         Time = entity.Time,
                         IsAllDay = entity.IsAllDay,
-                        LocationID= entity.LocationID,
+                        LocationID = entity.LocationID,
                         Location = entity.Location
-                       
                     };
             }
         }
@@ -101,13 +99,10 @@ namespace EventPlanner.Services
                         .Events
                         .Single(e => e.EventID == model.EventID && e.OwnerId == _userId);
 
-                entity.SubjectID = model.SubjectID;
-                entity.Title = model.Title;
                 entity.Description = model.Description;
                 entity.Date = model.Date;
                 entity.Time = model.Time;
                 entity.IsAllDay = model.IsAllDay;
-                entity.LocationID = model.LocationID;
 
                 return ctx.SaveChanges() == 1;
             }

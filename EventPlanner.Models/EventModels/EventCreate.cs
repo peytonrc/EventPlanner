@@ -16,21 +16,17 @@ namespace EventPlanner.Models
         public int SubjectID { get; set; }
         public virtual Subject Subject { get; set; }
 
-        [Required]
-        [MinLength(2, ErrorMessage = "You must enter at least 2 characters.")]
-        [MaxLength(100, ErrorMessage = "You have entered too many characters in this field.")]
-        public string Title { get; set; }
-
         [MaxLength(5000)]
         [Required]
         public string Description { get; set; }
 
         [Required]
+        [DataType(DataType.Date)]
         public DateTime Date { get; set; }
 
         [Required]
         [DataType(DataType.Time)]
-        public string Time { get; set; }
+        public TimeSpan Time { get; set; }
 
         [Required]
         [Display(Name = "Is All Day")]
