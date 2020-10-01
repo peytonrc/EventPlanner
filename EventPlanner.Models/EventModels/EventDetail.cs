@@ -17,6 +17,7 @@ namespace EventPlanner.Models
         [ForeignKey("Subject")] // Foreign Key
         [Display(Name = "Subject ID")]
         public int SubjectID { get; set; }
+       
         public virtual Subject Subject { get; set; }
 
         public string Title { get; set; }

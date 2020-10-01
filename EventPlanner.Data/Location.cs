@@ -10,11 +10,13 @@ namespace EventPlanner.Data
     public class Location
     {
         [Key]
+        [Display(Name ="Location")]
         public int LocationID { get; set; }
 
         public Guid OwnerId { get; set; }
 
         [Required]
+        [Display(Name = "Location Name")]
         public string LocationName { get; set; }
 
         [Required]

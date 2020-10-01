@@ -14,7 +14,7 @@ namespace EventPlanner.Models.SubjectModels
         public int SubjectID { get; set; }
 
         [Display(Name = "Type of Activity")]
-        public ActivityType TypeOfActivity { get; set; }
+        public string TypeOfActivity { get; set; }
 
         [Display(Name = "Subject Name")]
         public string SubjectName { get; set; }

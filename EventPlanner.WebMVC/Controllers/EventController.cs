@@ -1,4 +1,5 @@
-﻿using EventPlanner.Models;
+﻿using EventPlanner.Data;
+using EventPlanner.Models;
 using EventPlanner.Services;
 using Microsoft.AspNet.Identity;
 using System;
@@ -9,9 +10,12 @@ using System.Web.Mvc;
 
 namespace EventPlanner.WebMVC.Controllers
 {
+
     [Authorize]
     public class EventController : Controller
     {
+        private ApplicationDbContext _db = new ApplicationDbContext();
+
         // GET: Event
         public ActionResult Index()
         {
@@ -23,6 +27,10 @@ namespace EventPlanner.WebMVC.Controllers
         // GET: Event/Create
         public ActionResult Create()
         {
+            var subjects = new SelectList(_db.Subjects.ToList(), "SubjectID", "TypeOfActivity");
+            ViewBag.Subjects = subjects;
+            var locations = new SelectList(_db.Locations.ToList(), "LocationID", "LocationName");
+            ViewBag.Locations = locations;
             return View();
         }
 
@@ -31,6 +39,14 @@ namespace EventPlanner.WebMVC.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(EventCreate model)
         {
+            Subject subject = _db.Subjects.Find(model.SubjectID);
+            if (subject == null)
+                return HttpNotFound("Subject not found");
+
+            Location location = _db.Locations.Find(model.LocationID);
+            if (location == null)
+                return HttpNotFound("Location not found");
+
             if (!ModelState.IsValid) return View(model);
 
             var service = CreateEventService();
@@ -86,6 +102,7 @@ namespace EventPlanner.WebMVC.Controllers
                 ModelState.AddModelError("", "ID Mismatch");
                 return View(model);
             }
+
 
             var service = CreateEventService();
 

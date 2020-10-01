@@ -78,12 +78,14 @@ namespace EventPlanner.Services
                     {
                         EventID = entity.EventID,
                         SubjectID = entity.SubjectID,
+                        Subject = entity.Subject,
                         Title = entity.Title,
                         Description = entity.Description,
                         Date = entity.Date,
                         Time = entity.Time,
                         IsAllDay = entity.IsAllDay,
-                        LocationID= entity.LocationID
+                        LocationID= entity.LocationID,
+                        Location = entity.Location
                        
                     };
             }
