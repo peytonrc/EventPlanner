@@ -2,41 +2,67 @@
     ViewBag.Title = "Home Page";
 }
 
-<div class="jumbotron">
-    <h1>Event Planner</h1>
-    <h3>Register or Log in to begin planning!</h3>
-    
+<div class="title">
+    <h1 style="color: indianred; text-align: center;">Event Planner</h1>
+    <h3 style="color:lightslategrey; text-align: center;">Register or Log in to begin planning!</h3>
+
 </div>
 
-<div class="row">
+<div class="row" id="homenav" style="text-align: center; color: rosybrown">
     <div class="col-md-4">
-        <h2>Subjects</h2>
-        <p>
-            Start by creating a subject for your event.
-        </p>
+
         @if (User.Identity.IsAuthenticated)
         {
-            @Html.ActionLink("Subjects", "Index", "Subject", null, new { @class = "btn btn-primary btn-large" })
+            <h2>@Html.ActionLink("Subjects", "Index", "Subject")</h2>
         }
+
+        @if (!User.Identity.IsAuthenticated)
+        {
+            <h2>Subjects</h2>
+        }
+
+        <h4>Create subjects for your events.</h4>
+
     </div>
 
     <div class="col-md-4">
-       
-            <h2 style="color: black">@Html.ActionLink("Locations", "Index", "Location")</h2>
-       
-
-            <p>Add a location for your event here.</p>
-   
-           
-        </div>
-
-    <div class="col-md-4">
-        <h2>Events</h2>
-        <p>Add a new event!</p>
         @if (User.Identity.IsAuthenticated)
         {
-            @Html.ActionLink("Events", "Index", "Event", null, new { @class = "btn btn-primary btn-large" })
+            <h2>@Html.ActionLink("Locations", "Index", "Location")</h2>
         }
 
-        </div>
+        @if (!User.Identity.IsAuthenticated)
+        {
+            <h2>Locations</h2>
+        }
+
+        <h4>Add a location so you know where your event will be.</h4>
+        <img id=" " src="~/Content/Assets/" width="200" height="200 ">
+
+    </div>
+
+    <div class="col-md-4">
+        @if (User.Identity.IsAuthenticated)
+        {
+            <h2>@Html.ActionLink("Events", "Index", "Event")</h2>
+        }
+
+        @if (!User.Identity.IsAuthenticated)
+        {
+            <h2>Events</h2>
+        }
+
+        <h4>Finally, schedule your events!</h4>
+
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+
+
+
+
+    </div>
+
 </div>

@@ -20,6 +20,9 @@ namespace EventPlanner.Models
         public int SubjectID { get; set; }
         public virtual Subject Subject { get; set; }
 
+        [DataType(DataType.Date)]
+        public DateTime Date { get; set; }
+
         [Display(Name ="All Day")]
         public bool IsAllDay { get; set; }
     }

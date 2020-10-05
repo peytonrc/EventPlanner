@@ -56,11 +56,14 @@ namespace EventPlanner.Services
                                     EventID = e.EventID,
                                     SubjectID = e.SubjectID,
                                     Subject = e.Subject,
+                                    Date = e.Date,
                                     IsAllDay = e.IsAllDay
                                 }
                         );
 
-                return query.ToArray();
+                IEnumerable<EventListItem> orderedEvents = query.OrderBy(e => e.Date);
+
+                return orderedEvents.ToArray();
             }
         }
 

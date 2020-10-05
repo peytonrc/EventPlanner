@@ -31,6 +31,9 @@
                 @Html.DisplayNameFor(model => model.Subject.TypeOfEvent)
             </th>
             <th>
+                @Html.DisplayNameFor(model => model.Date)
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.IsAllDay)
             </th>
             <th></th>
@@ -47,6 +50,9 @@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Subject.TypeOfEvent)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Date)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.IsAllDay)
