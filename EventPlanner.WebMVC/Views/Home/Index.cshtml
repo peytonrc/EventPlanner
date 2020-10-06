@@ -2,22 +2,28 @@
     ViewBag.Title = "Home Page";
 }
 
-<div class="title">
-    <h1 style="color: indianred; text-align: center;">Event Planner</h1>
-    <h3 style="color:lightslategrey; text-align: center;">Register or Log in to begin planning!</h3>
+<div class="titlehead">
+    <img id=" " src="~/Content/Assets/" width="200" height="50 ">
+    <h3 style="color:lightslategrey;"> @Html.ActionLink("Register", "Register", "Account") or @Html.ActionLink("Log in", "Login", "Account") in to begin planning!</h3>
 
 </div>
+
+
 
 <div class="row" id="homenav" style="text-align: center; color: rosybrown">
     <div class="col-md-4">
 
+        <h4 id="numborder">1</h4>
+
         @if (User.Identity.IsAuthenticated)
         {
+           
             <h2>@Html.ActionLink("Subjects", "Index", "Subject")</h2>
         }
 
         @if (!User.Identity.IsAuthenticated)
         {
+
             <h2>Subjects</h2>
         }
 
@@ -26,39 +32,46 @@
     </div>
 
     <div class="col-md-4">
+
+        <h4 id="numborder">2</h4>
+
         @if (User.Identity.IsAuthenticated)
         {
+
             <h2>@Html.ActionLink("Locations", "Index", "Location")</h2>
         }
 
         @if (!User.Identity.IsAuthenticated)
         {
+
             <h2>Locations</h2>
         }
 
         <h4>Add a location so you know where your event will be.</h4>
-        <img id=" " src="~/Content/Assets/" width="200" height="200 ">
+
 
     </div>
 
     <div class="col-md-4">
+
+        <h4 id="numborder">3</h4>
+
         @if (User.Identity.IsAuthenticated)
         {
+
             <h2>@Html.ActionLink("Events", "Index", "Event")</h2>
         }
 
         @if (!User.Identity.IsAuthenticated)
         {
+
             <h2>Events</h2>
         }
 
         <h4>Schedule your events!</h4>
 
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
+
+
 
 
 

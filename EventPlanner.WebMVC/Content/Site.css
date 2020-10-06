@@ -4,6 +4,11 @@
     background-image: url("");
 }
 
+* {
+    font-family: 'Abel', sans-serif;
+    font-weight: 500;
+}
+
 /* Set padding to keep content from hitting the edges */
 .body-content {
     padding-left: 15px;
@@ -17,12 +22,13 @@
     white-space: normal;
 }
 
-.title{
+.titlehead {
     padding-top: 5em;
+    text-align: center;
 }
 
-#homenav{
-    padding-top: 3em;
+#homenav {
+    padding-top: 4em;
 }
 
 /* Set width on the form input elements since they're 100% wide by default */
@@ -32,16 +38,27 @@ textarea {
     max-width: 280px;
 }
 
-a:hover{
+a:hover {
     text-decoration: none;
-    color: darkolivegreen;
+    color: black;
+    text-decoration: underline;
 }
 
-a{
-    color: cadetblue;
+a {
+    color: goldenrod;
 }
 
 h2 {
     color: cadetblue;
 }
- 
+
+#numborder {
+    border: 2px solid lightgrey;
+    width: 3rem;
+    height: 3rem;
+    padding: 1rem;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
