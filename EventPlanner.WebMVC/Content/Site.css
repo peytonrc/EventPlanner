@@ -45,7 +45,7 @@ a:hover {
 }
 
 a {
-    color: goldenrod;
+    color: slategrey;
 }
 
 h2 {
@@ -62,3 +62,28 @@ h2 {
     align-items: center;
     border-radius: 50%;
 }
+
+th {
+    font-weight: 600;
+    color: mediumslateblue;
+}
+
+.SubjectBG {
+    background: url(Assets/pink-watercolor-background_3590-13.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    
+}
+
+table.table-bordered {
+    border: 1px solid slategrey;
+    margin-top: 20px;
+}
+
+    table.table-bordered > thead > tr > th {
+        border: 1px solid slategrey;
+    }
+
+    table.table-bordered > tbody > tr > td {
+        border: 1px solid slategrey;
+    }
