@@ -6,14 +6,11 @@
 
 <body class="SubjectBG">
 
+    <h2 style="text-align: center; padding-top: 1em;">Subjects</h2>
+
+    <a href="@Url.Action("Create", "Subject")" class="btn btn-outline-dark">Add Subject</a>
 
 
-
-    <h2 style="text-align: center;">Subjects</h2>
-
-    <p>
-        @Html.ActionLink("Add New Subject", "Create")
-    </p>
     @if (TempData.ContainsKey("SaveResult"))
     {
         <div class="alert alert-success fade in" role="alert">
@@ -43,7 +40,6 @@
         <tbody>
             @foreach (var item in Model)
             {
-
                 <tr>
                     <td>
                         @Html.DisplayFor(modelItem => item.SubjectID)
@@ -55,9 +51,9 @@
                         @Html.DisplayFor(modelItem => item.SubjectName)
                     </td>
                     <td>
-                        @Html.ActionLink("Edit", "Edit", new { id = item.SubjectID }) •
-                        @Html.ActionLink("Details", "Details", new { id = item.SubjectID })  •
-                        @Html.ActionLink("Delete", "Delete", new { id = item.SubjectID })
+                        @Html.ActionLink(" ", "Edit", new { id = item.SubjectID }, new { @class = "fa fa-edit"}) 
+                        @Html.ActionLink(" ", "Details", new { id = item.SubjectID }, new { @class = "fas fa-info-circle" })
+                        @Html.ActionLink(" ", "Delete", new { id = item.SubjectID }, new { @class = "far fa-trash-alt" })
                     </td>
                 </tr>
             }

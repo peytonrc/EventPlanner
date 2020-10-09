@@ -4,65 +4,70 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<body class="EventBG">
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-@if (TempData.ContainsKey("SaveResult"))
-{
-    <div class="alert alert-success fade in" role="alert">
+    <h2 style="text-align: center; padding-top: 1em;">Events</h2>
 
-        <button type="button" class="close" data-dismiss="alert">
-            <span>&times;</span>
-        </button>
-        @TempData["SaveResult"]
-    </div>
-}
-    <table class="table">
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.EventID)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Subject.SubjectName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Subject.TypeOfEvent)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Date)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.IsAllDay)
-            </th>
-            <th></th>
-        </tr>
+    <a href="@Url.Action("Create", "Event")" class="btn btn-outline-dark">Add Event</a>
 
-        @foreach (var item in Model)
-        {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.EventID)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Subject.SubjectName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Subject.TypeOfEvent)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Date)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.IsAllDay)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id = item.EventID }) |
-            @Html.ActionLink("Details", "Details", new { id = item.EventID }) |
-            @Html.ActionLink("Delete", "Delete", new { id = item.EventID })
-        </td>
-    </tr>
-        }
+    @if (TempData.ContainsKey("SaveResult"))
+    {
+        <div class="alert alert-success fade in" role="alert">
 
+            <button type="button" class="close" data-dismiss="alert">
+                <span>&times;</span>
+            </button>
+            @TempData["SaveResult"]
+        </div>
+    }
+    <table class="table table-bordered">
+        <thead>
+            <tr class="table-active">
+                <th>
+                    @Html.DisplayNameFor(model => model.EventID)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Subject.SubjectName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Subject.TypeOfEvent)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Date)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.IsAllDay)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.EventID)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Subject.SubjectName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Subject.TypeOfEvent)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Date)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.IsAllDay)
+                    </td>
+                    <td>
+                        @Html.ActionLink(" ", "Edit", new { id = item.EventID }, new { @class = "fa fa-edit" }) 
+                        @Html.ActionLink(" ", "Details", new { id = item.EventID }, new { @class = "fas fa-info-circle" }) 
+                        @Html.ActionLink(" ", "Delete", new { id = item.EventID }, new { @class = "far fa-trash-alt" })
+                    </td>
+                </tr>
+            }
+        </tbody>
     </table>
+</body>

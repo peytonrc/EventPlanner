@@ -4,53 +4,60 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<body class="LocationBG">
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-@if (TempData.ContainsKey("SaveResult"))
-{
-    <div class="alert alert-success fade in" role="alert">
+    <h2 style="text-align: center; padding-top: 1em;">
+        Locations
+    </h2>
 
-        <button type="button" class="close" data-dismiss="alert">
-            <span>&times;</span>
-        </button>
-        @TempData["SaveResult"]
-    </div>
-}
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.LocationID)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.LocationName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.IsInside)
-        </th>
-        <th></th>
-    </tr>
+    <a href="@Url.Action("Create", "Location")" class="btn btn-outline-dark">Add Location</a>
 
-    @foreach (var item in Model)
+    @if (TempData.ContainsKey("SaveResult"))
     {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.LocationID)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.LocationName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IsInside)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.LocationID }) |
-                @Html.ActionLink("Details", "Details", new { id = item.LocationID }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.LocationID })
-            </td>
-        </tr>
-    }
+        <div class="alert alert-success fade in" role="alert">
 
-</table>
+            <button type="button" class="close" data-dismiss="alert">
+                <span>&times;</span>
+            </button>
+            @TempData["SaveResult"]
+        </div>
+    }
+    <table class="table table-bordered">
+        <thead>
+            <tr class="table-active">
+                <th>
+                    @Html.DisplayNameFor(model => model.LocationID)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.LocationName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.IsInside)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.LocationID)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.LocationName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.IsInside)
+                    </td>
+                    <td>
+                        @Html.ActionLink(" ", "Edit", new { id = item.LocationID }, new { @class = "fa fa-edit" }) 
+                        @Html.ActionLink(" ", "Details", new { id = item.LocationID }, new { @class = "fas fa-info-circle" }) 
+                        @Html.ActionLink(" ", "Delete", new { id = item.LocationID }, new { @class = "far fa-trash-alt" })
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</body>

@@ -3,11 +3,14 @@
 }
 
 <div class="titlehead">
-    <img id=" " src="~/Content/Assets/" width="200" height="50 ">
-    <h3 style="color:lightslategrey;"> @Html.ActionLink("Register", "Register", "Account") or @Html.ActionLink("Log in", "Login", "Account") in to begin planning!</h3>
+    <img id="title-ep" src="~/Content/Assets/EP.png" style="width: 660px;">
+    <h3 id="register-login" style="color:steelblue;"> @Html.ActionLink("Register", "Register", "Account") or @Html.ActionLink("Log in", "Login", "Account") in to begin planning!</h3>
 
 </div>
 
+<body class="home-body">
+
+</body>
 
 
 <div class="row" id="homenav" style="text-align: center; color: rosybrown">
@@ -18,13 +21,13 @@
         @if (User.Identity.IsAuthenticated)
         {
            
-            <h2>@Html.ActionLink("Subjects", "Index", "Subject")</h2>
+            <h2 class="threenav">@Html.ActionLink("Subjects", "Index", "Subject")</h2>
         }
 
         @if (!User.Identity.IsAuthenticated)
         {
 
-            <h2>Subjects</h2>
+            <h2 class="threenav">Subjects</h2>
         }
 
         <h4>Create subjects for your events.</h4>
@@ -38,13 +41,13 @@
         @if (User.Identity.IsAuthenticated)
         {
 
-            <h2>@Html.ActionLink("Locations", "Index", "Location")</h2>
+            <h2 class="threenav">@Html.ActionLink("Locations", "Index", "Location")</h2>
         }
 
         @if (!User.Identity.IsAuthenticated)
         {
 
-            <h2>Locations</h2>
+            <h2 class="threenav">Locations</h2>
         }
 
         <h4>Add a location so you know where your event will be.</h4>
@@ -59,22 +62,16 @@
         @if (User.Identity.IsAuthenticated)
         {
 
-            <h2>@Html.ActionLink("Events", "Index", "Event")</h2>
+            <h2 class="threenav">@Html.ActionLink("Events", "Index", "Event")</h2>
         }
 
         @if (!User.Identity.IsAuthenticated)
         {
 
-            <h2>Events</h2>
+            <h2 class="threenav">Events</h2>
         }
 
         <h4>Schedule your events!</h4>
-
-
-
-
-
-
 
     </div>
 
