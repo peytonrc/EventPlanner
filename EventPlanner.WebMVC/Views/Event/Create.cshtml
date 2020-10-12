@@ -4,78 +4,90 @@
     ViewBag.Title = "Create";
 }
 
-<h2>Create</h2>
-
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
 
-    <div class="form-horizontal">
-        <h4>EventCreate</h4>
-        <hr />
+    <h2 style="text-align: center; padding-top: 1em;">Add Event</h2>
+    <hr />
+    <div class="row">
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-    <div class="form-group">
-        @Html.LabelFor(model => model.SubjectID, "Subject", htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.DropDownList("SubjectID", (IEnumerable<SelectListItem>)ViewBag.Subjects, "Select Subject", htmlAttributes: new { @class = "form-control" })
-            @Html.ValidationMessageFor(model => model.SubjectID, "", new { @class = "text-danger" })
-        </div>
-    </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Description, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
+        <div class="col-md-6">
+            <div class="form-group">
+                @Html.LabelFor(model => model.SubjectID, "Subject", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.DropDownList("SubjectID", (IEnumerable<SelectListItem>)ViewBag.Subjects, "Select Subject", htmlAttributes: new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.SubjectID, "", new { @class = "text-danger" })
+                </div>
             </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Date, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Date, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Date, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Time, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Time, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Time, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.IsAllDay, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                <div class="checkbox">
-                    @Html.EditorFor(model => model.IsAllDay)
-                    @Html.ValidationMessageFor(model => model.IsAllDay, "", new { @class = "text-danger" })
+            <div class="clearfix"></div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.Description, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
                 </div>
             </div>
         </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.LocationID, "Location", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("LocationID", (IEnumerable<SelectListItem>)ViewBag.Locations, "Select Location", htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.LocationID, "", new { @class = "text-danger" })
+        <div class="col-md-6">
+            <div class="form-group">
+                @Html.LabelFor(model => model.Date, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Date, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Date, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="clearfix"></div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.Time, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Time, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Time, "", new { @class = "text-danger" })
+                </div>
             </div>
         </div>
 
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
+        <div class="col-md-6">
+            <div class="form-group">
+                @Html.LabelFor(model => model.IsAllDay, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    <div class="checkbox">
+                        @Html.EditorFor(model => model.IsAllDay)
+                        @Html.ValidationMessageFor(model => model.IsAllDay, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="form-group">
+                @Html.LabelFor(model => model.LocationID, "Location", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.DropDownList("LocationID", (IEnumerable<SelectListItem>)ViewBag.Locations, "Select Location", htmlAttributes: new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.LocationID, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Create" class="btn btn-outline-dark" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <div>
+                @Html.ActionLink("Back to List", "Index")
             </div>
         </div>
     </div>
 }
-
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
-
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")

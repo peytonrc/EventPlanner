@@ -2,7 +2,9 @@
 body {
     padding-top: 50px;
     padding-bottom: 20px;
-  
+    background: url(Assets/pink-watercolor-background_3590-13.jpg);
+    background-size: cover;
+    background-attachment: fixed;
 }
 
 
@@ -66,7 +68,7 @@ nav a:hover{
 }
 
 h2 a{
-    color: teal;
+    color: slategray;
 }
 
  h2 a:hover {
@@ -109,25 +111,6 @@ th {
     color: maroon;
 }
 
-.SubjectBG {
-    background: url(Assets/pink-watercolor-background_3590-13.jpg);
-    background-size: cover;
-    background-attachment: fixed;
-    
-}
-
-
-.LocationBG {
-    background: url(Assets/pink-watercolor-background_3590-13.jpg);
-    background-size: cover;
-    background-attachment: fixed;
-}
-
-.EventBG {
-    background: url(Assets/pink-watercolor-background_3590-13.jpg);
-    background-size: cover;
-    background-attachment: fixed;
-}
 
 table.table-bordered {
     border: 1px solid slategrey;
@@ -142,11 +125,6 @@ table.table-bordered {
         border: 1px solid slategrey;
     }
 
-.home-body{
-    background: url(Assets/pink-watercolor-background_3590-13.jpg);
-    background-size: cover;
-    background-attachment: fixed;
-}
 
 .fa-edit{
     color: teal;
@@ -173,4 +151,12 @@ table.table-bordered {
 
 .fa-trash-alt:hover {
     color: cadetblue;
+}
+
+.clearfix {
+    clear: both;
+    padding: 0;
+    margin: 0;
+    height: 5px;
+    display: block;
 }

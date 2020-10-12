@@ -6,10 +6,6 @@
 
 <body class="EventBG">
 
-    <h2 style="text-align: center; padding-top: 1em;">Events</h2>
-    <div style="padding-bottom: 1em; padding-left: 2.6em; padding-top: 1em;">
-        <a href="@Url.Action("Create", "Event")" class="btn btn-outline-dark">Add Event</a>
-    </div>
     @if (TempData.ContainsKey("SaveResult"))
     {
         <div class="alert alert-success fade in" role="alert">
@@ -20,6 +16,12 @@
             @TempData["SaveResult"]
         </div>
     }
+
+    <h2 style="text-align: center; padding-top: 1em;">Events</h2>
+    <div style="padding-bottom: 1em; padding-left: 2.6em; padding-top: 1em;">
+        <a href="@Url.Action("Create", "Event")" class="btn btn-outline-dark">Add Event</a>
+    </div>
+
 
     <div class="card-container" style="text-align: center;">
         @foreach (var item in Model)
@@ -39,7 +41,7 @@
                 </div>
 
                 <div style="padding-bottom: 15px;">
-                   All Day:  @Html.DisplayFor(model => item.IsAllDay)
+                    All Day:  @Html.DisplayFor(model => item.IsAllDay)
                 </div>
 
                 <div>
