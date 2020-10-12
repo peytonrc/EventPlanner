@@ -7,9 +7,9 @@
 <body class="EventBG">
 
     <h2 style="text-align: center; padding-top: 1em;">Events</h2>
-
-    <a href="@Url.Action("Create", "Event")" class="btn btn-outline-dark">Add Event</a>
-
+    <div style="padding-bottom: 1em; padding-left: 2.6em; padding-top: 1em;">
+        <a href="@Url.Action("Create", "Event")" class="btn btn-outline-dark">Add Event</a>
+    </div>
     @if (TempData.ContainsKey("SaveResult"))
     {
         <div class="alert alert-success fade in" role="alert">
@@ -20,54 +20,36 @@
             @TempData["SaveResult"]
         </div>
     }
-    <table class="table table-bordered">
-        <thead>
-            <tr class="table-active">
-                <th>
-                    @Html.DisplayNameFor(model => model.EventID)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Subject.SubjectName)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Subject.TypeOfEvent)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Date)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.IsAllDay)
-                </th>
-                <th></th>
-            </tr>
-        </thead>
 
-        <tbody>
-            @foreach (var item in Model)
-            {
-                <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.EventID)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Subject.SubjectName)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Subject.TypeOfEvent)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Date)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.IsAllDay)
-                    </td>
-                    <td>
-                        @Html.ActionLink(" ", "Edit", new { id = item.EventID }, new { @class = "fa fa-edit" }) 
-                        @Html.ActionLink(" ", "Details", new { id = item.EventID }, new { @class = "fas fa-info-circle" }) 
-                        @Html.ActionLink(" ", "Delete", new { id = item.EventID }, new { @class = "far fa-trash-alt" })
-                    </td>
-                </tr>
-            }
-        </tbody>
-    </table>
+    <div class="card-container" style="text-align: center;">
+        @foreach (var item in Model)
+        {
+
+            <div class="card" style="height: 12em; width: 20em; display: inline-flex; padding: 1em 1em 1em 1em; margin: 1em 1em 1em 1em;">
+                <div style="text-align: left;">
+                    @Html.DisplayFor(model => item.EventID)
+                </div>
+
+                <div style="color: maroon; font-weight: 700">
+                    @Html.DisplayFor(model => item.Subject.SubjectName)
+                </div>
+
+                <div>
+                    @Html.DisplayFor(model => item.Date)
+                </div>
+
+                <div style="padding-bottom: 15px;">
+                   All Day:  @Html.DisplayFor(model => item.IsAllDay)
+                </div>
+
+                <div>
+                    @Html.ActionLink(" ", "Edit", new { id = item.EventID }, new { @class = "fa fa-edit" })
+                    @Html.ActionLink(" ", "Details", new { id = item.EventID }, new { @class = "fas fa-info-circle" })
+                    @Html.ActionLink(" ", "Delete", new { id = item.EventID }, new { @class = "far fa-trash-alt" })
+                </div>
+            </div>
+
+        }
+
+    </div>
 </body>

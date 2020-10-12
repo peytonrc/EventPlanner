@@ -116,6 +116,7 @@ th {
     
 }
 
+
 .LocationBG {
     background: url(Assets/pink-watercolor-background_3590-13.jpg);
     background-size: cover;
@@ -173,4 +174,3 @@ table.table-bordered {
 .fa-trash-alt:hover {
     color: cadetblue;
 }
-
