@@ -37,17 +37,10 @@
     </div>
 
     <div class="form-group">
-        <div class="col-md-offset-2 col-md-10">
-            <input type="submit" value="Save" class="btn btn-outline-dark" />
-        </div>
-    </div>
-
-
-    <div class="form-group">
-        <div class="col-md-offset-2 col-md-10">
-            <div>
-                @Html.ActionLink("Back to List", "Index")
-            </div>
+        <div style="font-size: 20px;" class="col-md-offset-2 col-md-10">
+            <button value="@Model.SubjectID" class="btn text-white delete"><i style="font-size: 25px;"class="far fa-save"></i>&nbsp;</button>
+        
+            @Html.ActionLink(" ", "Index", new { id = Model.SubjectID }, new { @class = "fas fa-arrow-left" })
         </div>
     </div>
 

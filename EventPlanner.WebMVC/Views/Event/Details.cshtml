@@ -5,14 +5,14 @@
 }
 
 <div>
-    <h2 style="text-align: center; padding-top: 1em;">Subject Details</h2>
+    <h2 style="text-align: center; padding-top: 1em;">Event Details</h2>
     <hr />
 
 
     <div class="card-container" style="text-align: center;">
-        <div class="card" style="height: 22em; width: 20em; display: inline-flex;">
+        <div class="card" style="width:auto; height:auto; display: inline-flex; word-wrap: break-word;">
 
-            <div class="card-body" style="text-align: left;">
+            <div class="card-body" style="text-align: left; margin-left: 10px;">
                 <div>
                     @Html.DisplayFor(model => model.EventID)
                 </div>
@@ -30,36 +30,28 @@
                 </div>
 
                 <div>
-                    <i style="margin-right: 7px;" class="far fa-calendar-check"></i>@Html.DisplayFor(model => model.Date)
+                    <i style="margin-left: 1px; margin-right: 7px;" class="far fa-calendar-check"></i>@Html.DisplayFor(model => model.Date)
                 </div>
 
                 <div>
-                    <i style="margin-right: 5px;" class="far fa-clock"></i> @Html.DisplayFor(model => model.Time)
-                </div>
-
-                <div>
+                    <i style="margin-right: 1px;" class="far fa-clock"></i> @Html.DisplayFor(model => model.Time) |
                     All Day: @Html.DisplayFor(model => model.IsAllDay)
                 </div>
 
                 <div>
-                    @Html.DisplayFor(model => model.Location.LocationName)
-                </div>
-
-                <div>
-                    @Html.DisplayFor(model => model.Location.Address)
-                </div>
-
-                <div>
-                    Inside: @Html.DisplayFor(model => model.Location.IsInside)
+                    <i style="margin-left: 1px; margin-right: 5px;" class="fas fa-map-marker-alt"></i>
+                    @Html.DisplayFor(model => model.Location.LocationName) |
+                    @Html.DisplayFor(model => model.Location.Address) | Inside: @Html.DisplayFor(model => model.Location.IsInside)
                 </div>
 
                 <div style="padding-bottom: 15px;">
+                    <i style="margin-right: 2px;" class="fas fa-route"></i>
                     @Html.DisplayFor(model => model.Location.TravelTime)
                 </div>
 
                 <div style="text-align: center;">
-                    @Html.ActionLink(" ", "Edit", new { id = Model.SubjectID }, new { @class = "fa fa-edit" })
-                    @Html.ActionLink(" ", "Index", new { id = Model.SubjectID }, new { @class = "fas fa-arrow-left" })
+                    @Html.ActionLink(" ", "Edit", new { id = Model.EventID }, new { @class = "fa fa-edit" })
+                    @Html.ActionLink(" ", "Index", new { id = Model.EventID }, new { @class = "fas fa-arrow-left" })
                 </div>
             </div>
         </div>

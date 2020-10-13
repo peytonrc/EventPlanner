@@ -4,109 +4,58 @@
     ViewBag.Title = "Delete";
 }
 
-<h2>Delete Event</h2>
+<h2 style="text-align: center; padding-top: 1em;">Event Details</h2>
+<h4 style="text-align: center; color: darkslategray;">Are you sure you want to delete this event?</h4>
+<hr />
 
-<h3>Are you sure you want to delete this event?</h3>
-<div>
-    <h4>Event Details</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.EventID)
-        </dt>
+    <div class="card-container" style="text-align: center;">
+        <div class="card" style="width:auto; height:auto; display: inline-flex; word-wrap: break-word;">
 
-        <dd>
-            @Html.DisplayFor(model => model.EventID)
-        </dd>
+            <div class="card-body" style="text-align: left; margin-left: 10px;">
+                <div>
+                    @Html.DisplayFor(model => model.EventID)
+                </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Subject.SubjectName)
-        </dt>
+                <div style="color: maroon; font-weight: 700;">
+                    @Html.DisplayFor(model => model.Subject.SubjectName)
+                </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.Subject.SubjectName)
-        </dd>
+                <div>
+                    @Html.DisplayFor(model => model.Subject.TypeOfEvent)
+                </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Subject.TypeOfEvent)
-        </dt>
+                <div>
+                    @Html.DisplayFor(model => model.Description)
+                </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.Subject.TypeOfEvent)
-        </dd>
+                <div>
+                    <i style="margin-left: 1px; margin-right: 7px;" class="far fa-calendar-check"></i>@Html.DisplayFor(model => model.Date)
+                </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Description)
-        </dt>
+                <div>
+                    <i style="margin-right: 1px;" class="far fa-clock"></i> @Html.DisplayFor(model => model.Time) |
+                    All Day: @Html.DisplayFor(model => model.IsAllDay)
+                </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.Description)
-        </dd>
+                <div>
+                    <i style="margin-left: 1px; margin-right: 5px;" class="fas fa-map-marker-alt"></i>
+                    @Html.DisplayFor(model => model.Location.LocationName) |
+                    @Html.DisplayFor(model => model.Location.Address) | Inside: @Html.DisplayFor(model => model.Location.IsInside)
+                </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Date)
-        </dt>
+                <div style="padding-bottom: 15px;">
+                    <i style="margin-right: 2px;" class="fas fa-route"></i>
+                    @Html.DisplayFor(model => model.Location.TravelTime)
+                </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.Date)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Time)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Time)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.IsAllDay)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.IsAllDay)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Location.LocationName)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Location.LocationName)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Location.Address)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Location.Address)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Location.IsInside)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Location.IsInside)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Location.TravelTime)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Location.TravelTime)
-        </dd>
-
-    </dl>
-
-    @using (Html.BeginForm()) {
-        @Html.AntiForgeryToken()
-
-        <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+                    <div style="text-align: center; margin-right: 7px;">
+                        <button value="@Model.SubjectID" class="btn text-white delete"><i class="far fa-trash-alt"></i>&nbsp;</button>
+                        @Html.ActionLink(" ", "Index", new { id = Model.EventID }, new { @class = "fas fa-arrow-left" })
+                    </div>
+                }
+            </div>
         </div>
-    }
-</div>
+    </div>

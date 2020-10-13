@@ -125,41 +125,50 @@ table.table-bordered {
 
 
 .fa-edit {
-    color: teal;
+    color: blue;
     padding-right: 1em;
 }
 
     .fa-edit:hover {
-        color: blue;
+        color: tan;
         text-decoration: none;
     }
 
 .fa-info-circle {
-    color: teal;
+    color: blue;
     padding-right: 1em;
 }
 
 
     .fa-info-circle:hover {
-        color: blue;
+        color: tan;
         text-decoration: none;
     }
 
 .fa-trash-alt {
-    color: teal;
+    color: blue;
 }
 
     .fa-trash-alt:hover {
-        color: blue;
+        color: tan;
         text-decoration: none;
     }
 
 .fa-arrow-left {
-    color: teal;
+    color: blue;
 }
 
     .fa-arrow-left:hover {
-        color: blue;
+        color: tan;
+        text-decoration: none;
+    }
+
+.fa-save{
+    color: blue;
+}
+
+    .fa-save:hover {
+        color: tan;
         text-decoration: none;
     }
 
