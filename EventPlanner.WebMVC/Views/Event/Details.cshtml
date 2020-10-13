@@ -4,103 +4,65 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
-
 <div>
-    <h4>Event Details</h4>
+    <h2 style="text-align: center; padding-top: 1em;">Subject Details</h2>
     <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.EventID)
-        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.EventID)
-        </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Subject.SubjectName)
-        </dt>
+    <div class="card-container" style="text-align: center;">
+        <div class="card" style="height: 22em; width: 20em; display: inline-flex;">
 
-        <dd>
-            @Html.DisplayFor(model => model.Subject.SubjectName)
-        </dd>
+            <div class="card-body" style="text-align: left;">
+                <div>
+                    @Html.DisplayFor(model => model.EventID)
+                </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Subject.TypeOfEvent)
-        </dt>
+                <div style="color: maroon; font-weight: 700;">
+                    @Html.DisplayFor(model => model.Subject.SubjectName)
+                </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.Subject.TypeOfEvent)
-        </dd>
+                <div>
+                    @Html.DisplayFor(model => model.Subject.TypeOfEvent)
+                </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Description)
-        </dt>
+                <div>
+                    @Html.DisplayFor(model => model.Description)
+                </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.Description)
-        </dd>
+                <div>
+                    <i style="margin-right: 7px;" class="far fa-calendar-check"></i>@Html.DisplayFor(model => model.Date)
+                </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Date)
-        </dt>
+                <div>
+                    <i style="margin-right: 5px;" class="far fa-clock"></i> @Html.DisplayFor(model => model.Time)
+                </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.Date)
-        </dd>
+                <div>
+                    All Day: @Html.DisplayFor(model => model.IsAllDay)
+                </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Time)
-        </dt>
+                <div>
+                    @Html.DisplayFor(model => model.Location.LocationName)
+                </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.Time)
-        </dd>
+                <div>
+                    @Html.DisplayFor(model => model.Location.Address)
+                </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.IsAllDay)
-        </dt>
+                <div>
+                    Inside: @Html.DisplayFor(model => model.Location.IsInside)
+                </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.IsAllDay)
-        </dd>
+                <div style="padding-bottom: 15px;">
+                    @Html.DisplayFor(model => model.Location.TravelTime)
+                </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Location.LocationName)
-        </dt>
+                <div style="text-align: center;">
+                    @Html.ActionLink(" ", "Edit", new { id = Model.SubjectID }, new { @class = "fa fa-edit" })
+                    @Html.ActionLink(" ", "Index", new { id = Model.SubjectID }, new { @class = "fas fa-arrow-left" })
+                </div>
+            </div>
+        </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.Location.LocationName)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Location.Address)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Location.Address)
-        </dd>
-
-        <dt>
-            @Html.LabelFor(model => model.Location.IsInside, "Is Inside")
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Location.IsInside)
-        </dd>
-
-        <dt>
-            @Html.LabelFor(model => model.Location.TravelTime, "Travel Time")
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Location.TravelTime)
-        </dd>
-
-    </dl>
+    </div>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.EventID }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>

@@ -16,7 +16,9 @@ namespace EventPlanner.WebMVC.Controllers
         public ActionResult Index()
         {
             var service = CreateSubjectService();
+
             var model = service.GetSubjects();
+
             return View(model);
         }
 

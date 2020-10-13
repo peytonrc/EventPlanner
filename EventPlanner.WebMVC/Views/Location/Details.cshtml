@@ -4,55 +4,35 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
-
 <div>
-    <h4>LocationDetail</h4>
+    <h2 style="text-align: center; padding-top: 1em;">Location Details</h2>
     <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.LocationID)
-        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.LocationID)
-        </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.LocationName)
-        </dt>
+    <div class="card-container" style="text-align: center;">
+        <div class="card" style="height: 12em; width: 20em; display: inline-flex; padding: 1em 1em 1em 1em; margin: 1em 1em 1em 1em;">
+            <div style="text-align: left;">
+                @Html.DisplayFor(model => model.LocationID)
+            </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.LocationName)
-        </dd>
+            <div style="color: maroon; font-weight: 700">
+                @Html.DisplayFor(model => model.LocationName)
+            </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Address)
-        </dt>
+            <div>
+                @Html.DisplayFor(model => model.Address)
+            </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.Address)
-        </dd>
+            <div style="padding-bottom: 15px;">
+                Inside: @Html.DisplayFor(model => model.IsInside)
+            </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.IsInside)
-        </dt>
+            <div>
+                @Html.ActionLink(" ", "Edit", new { id = Model.LocationID }, new { @class = "fa fa-edit" })
+                @Html.ActionLink(" ", "Index", new { id = Model.LocationID }, new { @class = "fas fa-arrow-left" })
+            </div>
+        </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.IsInside)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.TravelTime)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.TravelTime)
-        </dd>
-
-    </dl>
+    </div>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.LocationID }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+

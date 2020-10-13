@@ -13,7 +13,6 @@ body {
     font-weight: 500;
     margin: 0;
     padding: 0;
-
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -43,7 +42,7 @@ body {
     margin: auto;
 }
 
-#register-login{
+#register-login {
     margin-top: 0;
 }
 
@@ -58,29 +57,29 @@ textarea {
     max-width: 280px;
 }
 
-nav a{
+nav a {
     color: white;
 }
 
-nav a:hover{
-    color: cadetblue;
-    text-decoration: solid;
-}
+    nav a:hover {
+        color: cadetblue;
+        text-decoration: solid;
+    }
 
-h2 a{
+h2 a {
     color: slategray;
 }
 
- h2 a:hover {
-    color: darkslategrey;
-    text-decoration: solid;
-}
+    h2 a:hover {
+        color: darkslategrey;
+        text-decoration: solid;
+    }
 
 h3 a {
     color: teal;
 }
 
-.threenav{
+.threenav {
     color: cadetblue;
 }
 
@@ -88,7 +87,7 @@ h2 {
     color: darkslategray;
 }
 
-h4{
+h4 {
     color: steelblue;
 }
 
@@ -103,7 +102,6 @@ h4{
     justify-content: center;
     align-items: center;
     border-radius: 50%;
-    
 }
 
 th {
@@ -117,7 +115,7 @@ table.table-bordered {
     margin-top: 20px;
 }
 
-    table.table-bordered > thead > tr > th{
+    table.table-bordered > thead > tr > th {
         border: 1px solid slategrey;
     }
 
@@ -126,14 +124,15 @@ table.table-bordered {
     }
 
 
-.fa-edit{
+.fa-edit {
     color: teal;
     padding-right: 1em;
 }
 
-.fa-edit:hover {
-    color: darkslategray;
-}
+    .fa-edit:hover {
+        color: blue;
+        text-decoration: none;
+    }
 
 .fa-info-circle {
     color: teal;
@@ -141,17 +140,28 @@ table.table-bordered {
 }
 
 
-.fa-info-circle:hover{
-    color: cadetblue;
-}
+    .fa-info-circle:hover {
+        color: blue;
+        text-decoration: none;
+    }
+
 .fa-trash-alt {
     color: teal;
-   
 }
 
-.fa-trash-alt:hover {
-    color: cadetblue;
+    .fa-trash-alt:hover {
+        color: blue;
+        text-decoration: none;
+    }
+
+.fa-arrow-left {
+    color: teal;
 }
+
+    .fa-arrow-left:hover {
+        color: blue;
+        text-decoration: none;
+    }
 
 .clearfix {
     clear: both;

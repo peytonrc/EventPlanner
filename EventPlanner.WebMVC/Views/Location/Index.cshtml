@@ -6,12 +6,6 @@
 
 <body class="LocationBG">
 
-    <h2 style="text-align: center; padding-top: 1em;">
-        Locations
-    </h2>
-
-    <a href="@Url.Action("Create", "Location")" class="btn btn-outline-dark">Add Location</a>
-
     @if (TempData.ContainsKey("SaveResult"))
     {
         <div class="alert alert-success fade in" role="alert">
@@ -22,6 +16,13 @@
             @TempData["SaveResult"]
         </div>
     }
+
+    <h2 style="text-align: center; padding-top: 1em;">
+        Locations
+    </h2>
+
+    <a href="@Url.Action("Create", "Location")" class="btn btn-outline-dark">Add Location</a>
+
     <table class="table table-bordered">
         <thead>
             <tr class="table-active">
@@ -52,8 +53,8 @@
                         @Html.DisplayFor(modelItem => item.IsInside)
                     </td>
                     <td>
-                        @Html.ActionLink(" ", "Edit", new { id = item.LocationID }, new { @class = "fa fa-edit" }) 
-                        @Html.ActionLink(" ", "Details", new { id = item.LocationID }, new { @class = "fas fa-info-circle" }) 
+                        @Html.ActionLink(" ", "Edit", new { id = item.LocationID }, new { @class = "fa fa-edit" })
+                        @Html.ActionLink(" ", "Details", new { id = item.LocationID }, new { @class = "fas fa-info-circle" })
                         @Html.ActionLink(" ", "Delete", new { id = item.LocationID }, new { @class = "far fa-trash-alt" })
                     </td>
                 </tr>

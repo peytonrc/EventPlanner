@@ -10,9 +10,9 @@
 
     <h2 style="text-align: center; padding-top: 1em;">Add Event</h2>
     <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
     <div class="row">
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-
+      
         <div class="col-md-6">
             <div class="form-group">
                 @Html.LabelFor(model => model.SubjectID, "Subject", htmlAttributes: new { @class = "control-label col-md-2" })

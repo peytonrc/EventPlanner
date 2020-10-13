@@ -6,21 +6,21 @@
 
 <body class="SubjectBG">
 
+    @if (TempData.ContainsKey("SaveResult"))
+    {
+        <div class="alert alert-success fade in" role="alert">
+
+            <button type="button" class="close" data-dismiss="alert">
+                <span>&times;</span>
+            </button>
+            @TempData["SaveResult"]
+        </div>
+    }
+
     <h2 style="text-align: center; padding-top: 1em;">Subjects</h2>
 
     <a href="@Url.Action("Create", "Subject")" class="btn btn-outline-dark">Add Subject</a>
-    <div>
-        @if (TempData.ContainsKey("SaveResult"))
-        {
-            <div class="alert alert-success fade in" role="alert">
-
-                <button type="button" class="close" data-dismiss="alert">
-                    <span>&times;</span>
-                </button>
-                @TempData["SaveResult"]
-            </div>
-        }
-    </div>
+  
     <table class="table table-bordered">
         <thead>
             <tr class="table-active">
@@ -51,7 +51,7 @@
                         @Html.DisplayFor(modelItem => item.SubjectName)
                     </td>
                     <td>
-                        @Html.ActionLink(" ", "Edit", new { id = item.SubjectID }, new { @class = "fa fa-edit"}) 
+                        @Html.ActionLink(" ", "Edit", new { id = item.SubjectID }, new { @class = "fa fa-edit" })
                         @Html.ActionLink(" ", "Details", new { id = item.SubjectID }, new { @class = "fas fa-info-circle" })
                         @Html.ActionLink(" ", "Delete", new { id = item.SubjectID }, new { @class = "far fa-trash-alt" })
                     </td>

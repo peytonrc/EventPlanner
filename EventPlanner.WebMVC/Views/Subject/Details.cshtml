@@ -4,39 +4,29 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
-
 <div>
-    <h4>SubjectDetail</h4>
+    <h2 style="text-align: center; padding-top: 1em;">Subject Details</h2>
     <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.SubjectID)
-        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.SubjectID)
-        </dd>
+    <div class="card-container" style="text-align: center;">
+        <div class="card" style="height: 12em; width: 20em; display: inline-flex; padding: 1em 1em 1em 1em; margin: 1em 1em 1em 1em;">
+            <div style="text-align: left;">
+                @Html.DisplayFor(model => model.SubjectID)
+            </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.TypeOfEvent)
-        </dt>
+            <div style="color: maroon; font-weight: 700">
+                @Html.DisplayFor(model => model.TypeOfEvent)
+            </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.TypeOfEvent)
-        </dd>
+            <div style="padding-bottom: 15px;">
+                @Html.DisplayFor(model => model.SubjectName)
+            </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.SubjectName)
-        </dt>
+            <div>
+                @Html.ActionLink(" ", "Edit", new { id = Model.SubjectID }, new { @class = "fa fa-edit" })
+                @Html.ActionLink(" ", "Index", new { id = Model.SubjectID }, new { @class = "fas fa-arrow-left" })
+            </div>
+        </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.SubjectName)
-        </dd>
-
-    </dl>
+    </div>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.SubjectID }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
