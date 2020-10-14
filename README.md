@@ -2,9 +2,9 @@
 This Event Planner Web Application is designed to allow users to Create, Read, Update, &amp; Delete events.
 
 # Usage
-When first navigatigating to https://eventplanner.azurewebsites.net/, the home page only has clickable links to Register and Login. After completed one of the two, the three headings become clickable as well as a populated navbar.
+When first navigatigating to https://eventplanner.azurewebsites.net/, the home page only has clickable links to Register and Login. After completing one of the two, the three headings become clickable as well as a populated navbar.
 #### 1. Subjects
-The ability to add subjects provides more detail for those who may have many topics they wish to scheudle events for, as well as making it simplier to categorize those events.
+The ability to add subjects provides more detail for those who may have many topics they wish to schedule events for, as well as making it simpler to categorize those events.
 
 #### 2. Locations
 By adding a location for an event, it allows input for a specific place, the address, & travel time to that place. These locations can also be reused whenever needed for new events. 
