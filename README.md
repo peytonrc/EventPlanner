@@ -17,7 +17,7 @@ Finally, once you have a subject and a location, you are ready to schedule an ev
 • C# MVC
 • HTML
 • CSS
-• Bootstrap
+• Bootstrap/ JavaScript
 
 # Created By
 Peyton Cooper
