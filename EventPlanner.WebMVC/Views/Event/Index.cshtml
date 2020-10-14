@@ -6,23 +6,12 @@
 
 <body class="EventBG">
 
-    @if (TempData.ContainsKey("SaveResult"))
-    {
-        <div class="alert alert-success fade in" role="alert">
-
-            <button type="button" class="close" data-dismiss="alert">
-                <span>&times;</span>
-            </button>
-            @TempData["SaveResult"]
-        </div>
-    }
 
     <h2 style="text-align: center; padding-top: 1em;">Events</h2>
 
     <div style="padding-bottom: 1em; padding-left: 2.6em; padding-top: 1em;">
-        <a href="@Url.Action("Create", "Event")" class="btn btn-outline-dark">Add Event</a>
+        <a href="@Url.Action("Create", "Event")"><i title="Add Event" style="font-size: 2em;"class="fas fa-plus-square"></i></a>
     </div>
-
 
     <div class="card-container" style="text-align: center;">
         @foreach (var item in Model)
@@ -38,7 +27,7 @@
                 </div>
 
                 <div>
-                    @Html.DisplayFor(model => item.Date)
+                    <i style="margin-left: 1px; margin-right: 7px;" class="far fa-calendar-check"></i>@Html.DisplayFor(model => item.Date)
                 </div>
 
                 <div style="padding-bottom: 15px;">
@@ -46,9 +35,9 @@
                 </div>
 
                 <div>
-                    @Html.ActionLink(" ", "Edit", new { id = item.EventID }, new { @class = "fa fa-edit" })
-                    @Html.ActionLink(" ", "Details", new { id = item.EventID }, new { @class = "fas fa-info-circle" })
-                    @Html.ActionLink(" ", "Delete", new { id = item.EventID }, new { @class = "far fa-trash-alt" })
+                    @Html.ActionLink(" ", "Edit", new { id = item.EventID }, new { @class = "fa fa-edit", @title="Edit" })
+                    @Html.ActionLink(" ", "Details", new { id = item.EventID }, new { @class = "fas fa-info-circle", @title = "Details" })
+                    @Html.ActionLink(" ", "Delete", new { id = item.EventID }, new { @class = "far fa-trash-alt", @title = "Delete" })
                 </div>
             </div>
 

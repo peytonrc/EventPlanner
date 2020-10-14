@@ -38,9 +38,9 @@
 
     <div class="form-group">
         <div style="font-size: 20px;" class="col-md-offset-2 col-md-10">
-            <button value="@Model.SubjectID" class="btn text-white delete"><i style="font-size: 25px;"class="far fa-save"></i>&nbsp;</button>
+            <button value="@Model.SubjectID" class="btn text-white delete"><i title="Save" style="font-size: 25px;"class="far fa-save"></i>&nbsp;</button>
         
-            @Html.ActionLink(" ", "Index", new { id = Model.SubjectID }, new { @class = "fas fa-arrow-left" })
+            @Html.ActionLink(" ", "Index", new { id = Model.SubjectID }, new { @class = "fas fa-arrow-left", @title = "Return to Subjects" })
         </div>
     </div>
 

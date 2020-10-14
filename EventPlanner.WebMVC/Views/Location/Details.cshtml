@@ -28,8 +28,8 @@
             </div>
 
             <div>
-                @Html.ActionLink(" ", "Edit", new { id = Model.LocationID }, new { @class = "fa fa-edit" })
-                @Html.ActionLink(" ", "Index", new { id = Model.LocationID }, new { @class = "fas fa-arrow-left" })
+                @Html.ActionLink(" ", "Edit", new { id = Model.LocationID }, new { @class = "fa fa-edit", @title = "Edit" })
+                @Html.ActionLink(" ", "Index", new { id = Model.LocationID }, new { @class = "fas fa-arrow-left", @title = "Return to Locations" })
             </div>
         </div>
 

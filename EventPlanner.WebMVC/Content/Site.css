@@ -130,7 +130,7 @@ table.table-bordered {
 }
 
     .fa-edit:hover {
-        color: tan;
+        color: darkblue;
         text-decoration: none;
     }
 
@@ -141,7 +141,7 @@ table.table-bordered {
 
 
     .fa-info-circle:hover {
-        color: tan;
+        color: darkblue;
         text-decoration: none;
     }
 
@@ -150,7 +150,7 @@ table.table-bordered {
 }
 
     .fa-trash-alt:hover {
-        color: tan;
+        color: darkblue;
         text-decoration: none;
     }
 
@@ -159,7 +159,7 @@ table.table-bordered {
 }
 
     .fa-arrow-left:hover {
-        color: tan;
+        color: darkblue;
         text-decoration: none;
     }
 
@@ -168,9 +168,17 @@ table.table-bordered {
 }
 
     .fa-save:hover {
-        color: tan;
+        color: darkblue;
         text-decoration: none;
     }
+
+.fa-plus-square{
+    color: slategray;
+}
+.fa-plus-square:hover{
+    color:darkslategrey;
+}
+
 
 .clearfix {
     clear: both;

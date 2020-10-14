@@ -27,8 +27,8 @@
             {
                 @Html.AntiForgeryToken()
                 <div style="margin-right: 8px;">
-                    <button value="@Model.SubjectID" class="btn text-white delete"><i class="far fa-trash-alt"></i>&nbsp;</button>
-                    @Html.ActionLink(" ", "Index", new { id = Model.SubjectID }, new { @class = "fas fa-arrow-left" })
+                    <button value="@Model.SubjectID" class="btn text-white delete"><i title="Delete" class="far fa-trash-alt"></i>&nbsp;</button>
+                    @Html.ActionLink(" ", "Index", new { id = Model.SubjectID }, new { @class = "fas fa-arrow-left", @title = "Return to Subjects" })
                 </div>
             }
             </div>

@@ -50,8 +50,8 @@
                 </div>
 
                 <div style="text-align: center;">
-                    @Html.ActionLink(" ", "Edit", new { id = Model.EventID }, new { @class = "fa fa-edit" })
-                    @Html.ActionLink(" ", "Index", new { id = Model.EventID }, new { @class = "fas fa-arrow-left" })
+                    @Html.ActionLink(" ", "Edit", new { id = Model.EventID }, new { @class = "fa fa-edit", @title = "Edit" })
+                    @Html.ActionLink(" ", "Index", new { id = Model.EventID }, new { @class = "fas fa-arrow-left", @title = "Return to Events" })
                 </div>
             </div>
         </div>
